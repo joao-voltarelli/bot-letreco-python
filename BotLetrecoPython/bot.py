@@ -23,7 +23,7 @@ class Bot(WebBot):
 
     def start_game(self):
         words_list = []
-        with open("resources/words_list.txt", "r") as file:
+        with open(self.get_resource_abspath("words_list.txt"), "r") as file:
             for line in file:
                 if '-' not in line and len(line) == 6:
                     words_list.append(line.replace('\n', ''))
